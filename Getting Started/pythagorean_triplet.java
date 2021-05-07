@@ -23,6 +23,24 @@ import java.util.*;
 
 public class pythagorean_triplet {
     public static void main(String[] args) {
-        
+        Scanner S = new Scanner(System.in);
+        int a = S.nextInt();
+        int b = S.nextInt();
+        int c = S.nextInt();
+        int largest = a>b ? (a>c ? a:c) : (b>c ? b:c);
+        if(a==largest){
+            a=b;
+            b=c;
+        }else if(b==largest){
+            b=c;
+        }else if(c==largest){
+            a=a;
+            b=b;
+        }
+        if((a*a) + (b*b) == (largest*largest)){
+            System.out.println(true);
+        }else{
+            System.out.println(false);
+        }
     }
 }
