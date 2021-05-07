@@ -1,5 +1,6 @@
 {
     "java.project.sourcePaths": [
-        "Getting Started"
+        "Getting Started",
+        "2. Patterns"
     ]
 }

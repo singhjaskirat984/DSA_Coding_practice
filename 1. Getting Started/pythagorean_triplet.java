@@ -19,7 +19,7 @@ Sample Output
 true
 */
 
-import java.util.*;
+    import java.util.*;
 
 public class pythagorean_triplet {
     public static void main(String[] args) {
@@ -42,5 +42,6 @@ public class pythagorean_triplet {
         }else{
             System.out.println(false);
         }
+        S.close();
     }
 }
