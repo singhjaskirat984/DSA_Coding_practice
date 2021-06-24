@@ -18,8 +18,8 @@ public class pattern_8 {
         int n = scn.nextInt();
 
         for(int i=n; i>=1; i--){
-            for(int j=i; j>=1; j--){
-                if(j==1){
+            for(int j=1; j<=i; j++){
+                if(j==i){
                     System.out.print("*\t");
                 }else{
                     System.out.print("\t");
