@@ -1,6 +1,7 @@
 {
     "java.project.sourcePaths": [
+        "2. Patterns",
         "1. Getting Started",
-        "2. Patterns"
+        "3. Functions and Arrays"
     ]
 }
