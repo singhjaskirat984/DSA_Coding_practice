@@ -39,7 +39,7 @@ public class P2_Decimal_To_Any_Base {
         while(n>0){
             int rem = n%b;
             n=n/b;
-            ans = ans + (power*rem);
+            ans = ans + (rem*power);
             power = power*10;
         }
         return ans;
