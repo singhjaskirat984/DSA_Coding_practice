@@ -6,7 +6,7 @@ const questionsRoute = require('./api/routes/questions')
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
-mongoose.connect('mongodb+srv://jaskirat:jaskirat1998@astrotak.x1lg7.mongodb.net/myFirstDatabase?retryWrites=true&w=majority')
+mongoose.connect('')
 
 mongoose.connection.on('error',err=>{
     console.log('connection failure')
