@@ -1,0 +1,11 @@
+Agenda
+1. q1 = Pattern 10 (ohw)
+2. q2 = Pattern 12 (ohw)
+3. q3 = Pattern 13 (nhw)
+4. q4 = Pattern 14 (cw)
+5. q5 = Pattern 15 (nhw)
+6. q6 = Pattern 16 (nhw)
+7. q7 = Pattern 17 (cw)
+8. q8 = Pattern 18
+
+
