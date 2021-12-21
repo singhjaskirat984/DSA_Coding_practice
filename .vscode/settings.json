@@ -1,12 +1,14 @@
 {
     "java.project.sourcePaths": [
+        "Pepcoding/Lecture 7",
         "Pepcoding/Lecture 6",
         "Pepcoding/Lecture 4",
         "Pepcoding/Lecture 3",
         "Pepcoding/Lecture 2",
+        "4. Linked List",
         "3. Functions and Arrays",
         "2. Patterns",
         "1. Getting Started",
-        "Pepcoding/Lecture 7"
+        "Pepcoding_Own_Practice/Lecture 7"
     ]
 }

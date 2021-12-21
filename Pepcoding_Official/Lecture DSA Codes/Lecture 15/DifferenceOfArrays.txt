@@ -1,0 +1,58 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args){
+        Scanner scn = new Scanner(System.in);
+        
+        int n1 = scn.nextInt();
+        int[] one = new int[n1];
+        for(int i = 0; i < one.length; i++){
+            one[i] = scn.nextInt();
+        }
+
+        int n2 = scn.nextInt();
+        int[] two = new int[n2];
+        for(int i = 0; i < two.length; i++){
+            two[i] = scn.nextInt();
+        }
+
+        int[] ans = new int[n2];
+        int i = one.length - 1;
+        int j = two.length - 1;
+        int k = ans.length - 1;
+
+        int c = 0;
+        while(k >= 0){
+            int d = two[j] + c;
+
+            if(i >= 0){
+                d = d - one[i];
+            }
+
+            if(d < 0){
+                d += 10;
+                c = -1;
+            } else {
+                d = d;
+                c = 0;
+            }
+
+            ans[k] = d;
+            i--;
+            j--;
+            k--;
+        }
+
+        int idx = 0; // skipping the initial zeroes
+        for(idx = 0; idx < ans.length; idx++){
+            if(ans[idx] != 0){
+                break;
+            }
+        }
+
+        for(int ii = idx; ii < ans.length; ii++){
+            System.out.println(ans[ii]);
+        }
+
+    }
+}
