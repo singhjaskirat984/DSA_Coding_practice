@@ -63,12 +63,25 @@ public class p13_target_sum_pair_1{
             arr[i] = scn.nextInt();
         }
         int target =  scn.nextInt();
-        targetSumPair1(arr, target, 0, arr.length-1);
+        targetSumPair1(arr, target
+        );
     }
 
-    public static void targetSumPair1(int[] arr, int target, int lo, int hi){
-        arr = mergeSort(arr, lo, hi); 
-        print(arr);
+    public static void targetSumPair1(int[] arr, int target){
+        arr = mergeSort(arr, 0, arr.length-1); 
+        int i=0, j=arr.length-1;
+        while(i<=j){
+            if(arr[i]+arr[j]>target){
+                j--;
+            }else if(arr[i]+arr[j]<target){
+                i++;
+            }else if(arr[i]+arr[j]==target){
+                System.out.println(arr[i] + ", " + arr[j]);
+                i++;
+                j--;
+            }
+        }
+        
     }
 
     public static int[] mergeSort(int[] arr, int lo,  int hi){
