@@ -20,8 +20,8 @@ public class p21_dynamic_queue {
                 // copy data from data to ndata
                 for(int i=0; i<size; i++){
                     // take data from circular queue to ndata array
-                    int rear = (front + i) % data.length;
-                    ndata[i] = data[rear];
+                    int idx = (front + i) % data.length;
+                    ndata[i] = data[idx];
                 }
                 // point data array to ndata array
                 data = ndata;
