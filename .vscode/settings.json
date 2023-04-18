@@ -1,10 +1,11 @@
 {
     "java.project.sourcePaths": [
+        "6. Stacks And Queues",
         "5. Sorting",
         "4. Recursion",
         "3. Functions and Arrays",
         "2. Patterns",
         "1. Getting Started",
-        "6. Stacks And Queues"
+        "5. Trees/1. Generic Tree"
     ]
 }

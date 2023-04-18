@@ -1,4 +1,4 @@
-import java.util.*;;
+import java.util.*;
 
 public class p1_duplicate_brackets {
     public static void main(String[] args) {
