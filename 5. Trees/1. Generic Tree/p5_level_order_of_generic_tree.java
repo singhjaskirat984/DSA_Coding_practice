@@ -1,32 +1,33 @@
 import java.util.*;
 
-public class p3_height_of_a_generic_tree {
+public class p5_level_order_of_generic_tree {
     private static class Node {
         int data;
         ArrayList<Node> children = new ArrayList<>();
     }
 
-    public static int height(Node node){
-        int ht = -1;
+    public static void levelOrder(Node node){
+        Queue<Node> q = new ArrayDeque<>();
+        q.add(node);
 
-        for(Node child: node.children) {
-            int tempHt = height(child);
-            ht = Math.max(tempHt, ht);
+        while(q.size()>0){
+            node = q.remove();
+            System.out.print(node.data + " ");
+
+            for(Node child: node.children){
+                q.add(child);
+            }
         }
-
-        ht++;
-
-        return ht;
     }
 
     public static void main(String[] args) {
-        int[] arr = {10, 20, 50, -1, 60, -1, -1, 30, 70, -1, 80, 110, -1, 120, -1, -1, 90, -1, -1, 40, 100, -1, -1, -1};
+        int[] arr = {10, 20, -1, 30, 50, -1, 60, -1, -1, 40, -1, -1};
 
         Node root = null;
         Stack<Node> st = new Stack<>();
 
         for(int i=0; i<arr.length; i++){
-            if(arr[i] == -1){
+            if(arr[i]==-1){
                 st.pop();
             }else{
                 Node t = new Node();
@@ -40,7 +41,6 @@ public class p3_height_of_a_generic_tree {
                 st.push(t);
             }
         }
-        int h = height(root);
-        System.out.println(h);
+        levelOrder(root);
     }
 }

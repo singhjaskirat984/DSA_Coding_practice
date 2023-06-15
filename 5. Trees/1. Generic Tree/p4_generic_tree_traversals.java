@@ -1,32 +1,31 @@
 import java.util.*;
 
-public class p3_height_of_a_generic_tree {
+public class p4_generic_tree_traversals {
     private static class Node {
         int data;
         ArrayList<Node> children = new ArrayList<>();
     }
 
-    public static int height(Node node){
-        int ht = -1;
+    public static void traversal(Node node){
+        System.out.println("Node Pre " + node.data);
 
-        for(Node child: node.children) {
-            int tempHt = height(child);
-            ht = Math.max(tempHt, ht);
+        for(Node child: node.children){
+            System.out.println("Edge Pre " + node.data + " -- " + child.data);
+            traversal(child);
+            System.out.println("Edge Post " + node.data + " -- " + child.data);
         }
 
-        ht++;
-
-        return ht;
+        System.out.println("Node Post " + node.data);
     }
 
     public static void main(String[] args) {
-        int[] arr = {10, 20, 50, -1, 60, -1, -1, 30, 70, -1, 80, 110, -1, 120, -1, -1, 90, -1, -1, 40, 100, -1, -1, -1};
+        int[] arr = {10, 20, -1, 30, 50, -1, 60, -1, -1, 40, -1, -1};
 
         Node root = null;
         Stack<Node> st = new Stack<>();
 
         for(int i=0; i<arr.length; i++){
-            if(arr[i] == -1){
+            if(arr[i]==-1){
                 st.pop();
             }else{
                 Node t = new Node();
@@ -40,7 +39,6 @@ public class p3_height_of_a_generic_tree {
                 st.push(t);
             }
         }
-        int h = height(root);
-        System.out.println(h);
+        traversal(root);
     }
 }

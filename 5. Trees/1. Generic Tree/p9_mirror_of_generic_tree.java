@@ -1,37 +1,43 @@
 import java.util.*;
 
-public class p3_height_of_a_generic_tree {
+public class p9_mirror_of_generic_tree {
     private static class Node {
         int data;
         ArrayList<Node> children = new ArrayList<>();
     }
 
-    public static int height(Node node){
-        int ht = -1;
-
-        for(Node child: node.children) {
-            int tempHt = height(child);
-            ht = Math.max(tempHt, ht);
+    public static void mirror(Node node){
+        for(Node child: node.children){
+            mirror(child);
         }
+        Collections.reverse(node.children);
+    }
 
-        ht++;
+    public static void display(Node node){
+        String str = node.data + " -> ";
+        for(Node child: node.children){
+            str += child.data + ", ";
+        }
+        str += ".";
+        System.out.println(str);
 
-        return ht;
+        for(Node child: node.children){
+            display(child);
+        }
     }
 
     public static void main(String[] args) {
         int[] arr = {10, 20, 50, -1, 60, -1, -1, 30, 70, -1, 80, 110, -1, 120, -1, -1, 90, -1, -1, 40, 100, -1, -1, -1};
 
-        Node root = null;
         Stack<Node> st = new Stack<>();
+        Node root = null;
 
         for(int i=0; i<arr.length; i++){
-            if(arr[i] == -1){
+            if(arr[i]==-1){
                 st.pop();
             }else{
                 Node t = new Node();
                 t.data = arr[i];
-
                 if(st.size()>0){
                     st.peek().children.add(t);
                 }else{
@@ -40,7 +46,7 @@ public class p3_height_of_a_generic_tree {
                 st.push(t);
             }
         }
-        int h = height(root);
-        System.out.println(h);
+        mirror(root);
+        display(root);
     }
 }
