@@ -1,13 +1,12 @@
 package Trees;
 import java.util.*;
 
-public class generic_tree_traversals {
+public class generic_tree_level_order_linewise {
 
-    public static class Node {
+    private static class Node {
         int data;
         ArrayList<Node> children = new ArrayList<>();
     }
-
     public static void main(String[] args) {
         int[] arr = {10, 20, 50, -1, 60, -1, -1, 30, 70, -1, 80, 110, -1, 120, -1, -1, 90, -1, -1, 40, 100, -1, -1, -1};
 
@@ -30,20 +29,31 @@ public class generic_tree_traversals {
 
                 st.push(t);
             }
-        }
+        }   
 
-        traversal(root);
+        LevelOrderLinewise(root);
     }
 
-    public static void traversal(Node node) {
-        System.out.println("Node pre " + node.data);
+    public static void LevelOrderLinewise(Node node) {
+        Queue<Node> mainQ = new ArrayDeque<>();
+        Queue<Node> childQ = new ArrayDeque<>();
 
-        for(Node child: node.children) {
-            System.out.println("Edge pre " + node.data + "->" + child.data);
-            traversal(child);
-            System.out.println("Edge post " + node.data + "->" + child.data);
+        mainQ.add(node);
+
+        while(mainQ.size()>0) {
+            Node n = mainQ.remove();
+
+            System.out.print(n.data + ", ");
+
+            for(Node child: n.children) {
+                childQ.add(child);
+            }
+
+            if(mainQ.size()==0) {
+                mainQ = childQ;
+                childQ = new ArrayDeque<>();
+                System.out.println();
+            }
         }
-
-        System.out.println("Edge post " + node.data);
     }
 }
