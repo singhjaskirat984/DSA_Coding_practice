@@ -1,5 +1,6 @@
 /*
 Pattern 13
+pascal triangle
 
 1	
 1	1	

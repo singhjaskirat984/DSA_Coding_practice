@@ -1,5 +1,7 @@
 {
     "java.project.sourcePaths": [
+        "Revision",
+        "7. Linked Lists",
         "6. Stacks And Queues",
         "5. Trees/1. Generic Tree",
         "5. Sorting",
@@ -7,6 +9,6 @@
         "3. Functions and Arrays",
         "2. Patterns",
         "1. Getting Started",
-        "Revision"
+        "5. Trees/2. Binary Tree"
     ]
 }
